@@ -2273,6 +2273,7 @@ public class ImsPhoneCallTracker extends CallTracker implements ImsPullCall {
                 }
                 mPhone.getServiceState().setRilImsRadioTechnology(getRilImsRadioTechnology());
                 mPhone.onFeatureCapabilityChanged();
+                mImsManager.setVolteCallCapability(isVolteEnabled());
 
                 mMetrics.writeOnImsCapabilities(
                         mPhone.getPhoneId(), mImsFeatureEnabled);
